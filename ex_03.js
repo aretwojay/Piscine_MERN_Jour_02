@@ -18,12 +18,12 @@ db.createCollection("students", {
              },
              email: {
                  bsonType: "string",
-                 // pattern:  "^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$",
+                 pattern:  "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$",
                  description: "'email' must be a string and is required",
              },
              phone: {
                  bsonType: "string",
-                 // pattern: "^(\+33|0)[1-9](\d\d){4}$",
+                 pattern: "^(\\+33|0)[1-9](\\d\\d){4}$",
                  description: "'phone' must be valid and is required",
              },
              validated: {
