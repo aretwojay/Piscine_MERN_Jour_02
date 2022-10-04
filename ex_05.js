@@ -33,13 +33,12 @@ app.post('/', function (req, res) {
             validated: req.body.validated, 
             admin: req.body.admin
         };
-        db.collection("students").insertOne(obj, function (err, res) {
-            if (err) throw err;
-            console.log("1 student inserted")
+        db.collection("students").insertOne(obj, function (err, content) {
+            if (err) return res.send("Failed to save the collection");
+            res.send("Collection saved");
             client.close();
         });
     });
-    res.send("envoyé ?");
 
 });
 
